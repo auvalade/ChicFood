@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+        <br> 
+        <div class="container">
+            <div class="row">
+                 <div class="col s12">
+		     <a href="/" class="waves-effect waves-light btn light-blue darken-4"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;Go back</a>
+                     &nbsp;<strong>{{ total_results }}</strong> result(s) found !
+                 </div>
+            </div>
+            <div class="row">
+                {% for food in all_food %}
+                <div class="col s12 m6 l4 ">
+                    <div class="card-panel ">
+                      <div class="custom_card_size">
+                      <strong>{{ food.name|capfirst }}</strong>
+                      <br>
+                      <span class="description">{{ food.short_desc|truncatechars:80 }}</span>
+                      </div>
+                      <br>
+                      <br>
+                      
+		      <span><i class="fa fa-heart" style="color:red" aria-hidden="true"></i>&nbsp;{{ food.taste_level }}/10</span>
+		      <span class='right'><i class="fa fa-leaf" style="color:green"  aria-hidden="true"></i>&nbsp;{{ food.healthy_level }}/10</span>
+		      <hr>
+		      <span>&nbsp;{{ food.quantity }} left</span>
+		      <span class='right'><strong>${{ food.price }}</strong></span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+         </div>
+{% endblock %}

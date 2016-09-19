@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hellooo</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+	.description{
+            word-wrap:break-word;
+	}
+        .custom_card_size{
+	    min-height:110px;
+	}
+    </style>
+</head>
+<body class="grey lighten-3">
+    <nav class="light-blue darken-4">
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo left">&nbsp;<strong>Chic</strong>Food</a>
+          <ul id="nav-mobile" class="right">
+	    {% if user.is_authenticated %}
+                <li><a href="add"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+	        <li><a href="logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+            {% else %}
+	        <li><a href="login"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+            {% endif %}
+          </ul>
+          <ul id="nav-mobile" class="right hide-on-small-only">
+	      <form action="search" method="get" >
+	         <li>
+                    <input  placeholder="Search foooood !" id="search_query" name="q" type="text" class="validate">
+                 </li>
+	         <li>
+                     <button style="background: transparent; border: none; margin: auto 5px;" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                 </li>
+             </form>
+          </ul>
+        </div>
+    </nav>
+    <section>
+    {% block content %}
+    {% endblock %}
+    </section>
+</body>
+</html>
