@@ -1,7 +1,7 @@
 from django import forms
 from django.core.validators import MaxValueValidator, MinValueValidator, RegexValidator
 from .models import Food
-
+ 
 text_only_validator = RegexValidator(r'^[a-zA-Z ]*$', "Ensure this value only contains letters and spaces.")
 
 
