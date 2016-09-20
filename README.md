@@ -1,11 +1,11 @@
 **Chic**Food
 ============
 
-**So, I like food. **
+**So, I like food.**
 
 This little website is a food showcase, on which you can add all your favorite food and display it on a nice frontpage.
 
-*Some features: *
+*Some features:*
 
 -   Elastic Search Powered
 
@@ -31,6 +31,8 @@ You need:
 2 – How to use
 --------------
 
-Once everything is up and running, the rest is pretty straightforward. All you need is a user on your database (the fastest way is to make a superuser with the ‘python3 manage.py createsuperuser’ command).
+Once everything is up and running, the rest is pretty straightforward. All you need is a user on your database (the fastest way is to make a superuser with the `python3 manage.py createsuperuser` command).
 
 After that, just open the main page, login and start adding some tasty food !
+
+
